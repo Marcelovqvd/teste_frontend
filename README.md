@@ -1,68 +1,163 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Teste Front-end Tradeup
 
-## Available Scripts
+## Desafio
 
-In the project directory, you can run:
+Neste teste, o seu objetivo é montar um sistema simples, onde será necessário fazer um CRUD com autenticação e duas páginas que exibem os dados providos de uma API Rest, fornecida por nós.
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Pontuação
 
-### `yarn test`
+Será necessário para concluir o teste:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Apenas código front-end será considerado no projeto (HTML, CSS, JavaScript).
+- Frameworks CSS não serão permitidos. Todo código CSS deve ser escrito por você.
+- Você pode utilizar pré-processadores CSS à vontade.
+- O projeto pode ser escrito em javascript puro ou utilizar frameworks como Vue.js, React ou outro.
+- Gerenciadores de pacotes e task runners podem ser usados à vontade.
+- O projeto precisa ser responsivo, funcionando tanto em desktop quanto em mobile.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requisitos
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Sinta-se livre para cumprir os requisitos da forma que julgar melhor, o importante é que seja possível executar todas as ações descritas neles.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Você vai perceber que os requisitos são relativamente vagos, pois queremos ver as suas escolhas e o que julga melhor para completar a tarefa.
 
-### `yarn eject`
+A aplicação consiste em três telas:
+  - Login - onde será efetuada a autenticação.
+  - Após o login, mais duas telas para os usuários autenticadas:
+    - Listagem de Usuários cadastrados.
+    - Ver os detalhes de um usuário específicos.
+    
+Não se preocupe com marcas, imagens bonitas, etc. O que será avaliado é a usabilidade, qualidade de código e eficiência.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Para a tela de login:**
+Deve ser necessário fornecer e-mail e senha para efetuar o login.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Para a listagem de usuários:**
+Para cada item do endpoint de usuários, deve ser exibido o nome, email e avatar. Ao clicar em um item, deve-se ir para a página de detalhes do usuário.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Para detalhe do usuário:**
+Devem ser exibidas as mesmas informações da listagem.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Entregável
+- A aplicação deve estar funcionando corretamente, também tratando dos possíveis erros que podem ocorrer.
+- Repositório no GitHub com o seu código.
+- O README do seu projeto deve conter:
+  - Instruções para rodar o projeto, caso necessário.
+  - Tecnologias usadas e a razão das escolhas delas.
 
-## Learn More
+### Prazo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Você tem 7 dias para a entrega do projeto a partir da data que o desafio foi enviado para você.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dados
 
-### Code Splitting
+### Autenticação:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+##### Request
 
-### Analyzing the Bundle Size
+POST [/api/login](https://reqres.in/api/login)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```js
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+```
 
-### Making a Progressive Web App
+##### Response
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+200
 
-### Advanced Configuration
+```js
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Listagem de usuários:
 
-### Deployment
+##### Request
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+GET [/api/users?page=2](https://reqres.in/api/users?page=2)
 
-### `yarn build` fails to minify
+##### Response
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+200
+
+```js
+{
+    "page": 2,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 7,
+            "email": "michael.lawson@reqres.in",
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+        },
+        {
+            "id": 8,
+            "email": "lindsay.ferguson@reqres.in",
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+        },
+        {
+            "id": 9,
+            "email": "tobias.funke@reqres.in",
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+        },
+        {
+            "id": 10,
+            "email": "byron.fields@reqres.in",
+            "first_name": "Byron",
+            "last_name": "Fields",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+        },
+        {
+            "id": 11,
+            "email": "george.edwards@reqres.in",
+            "first_name": "George",
+            "last_name": "Edwards",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg"
+        },
+        {
+            "id": 12,
+            "email": "rachel.howell@reqres.in",
+            "first_name": "Rachel",
+            "last_name": "Howell",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg"
+        }
+    ]
+}
+```
+
+### Listagem de usuários:
+
+##### Request
+
+GET [/api/users/2](https://reqres.in/api/users/2)
+
+##### Response
+
+200
+
+```js
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+    }
+}
+```
