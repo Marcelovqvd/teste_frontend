@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from './styles';
+import { Container, Form } from './styles';
 
 export default class Login extends Component {
 
