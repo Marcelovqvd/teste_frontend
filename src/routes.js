@@ -7,15 +7,16 @@ import Login from './pages/Login/index';
 import UsersList from './pages/UsersList';
 import User from './pages/User';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    isAuthenticated() ? (
-      < Component {...props} />
-    ) : (
-        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+    isAuthenticated() ? (<Component {...props} />)
+      : (<Redirect to={{ pathname: '/', state: { from: props.location } }}
+      />
       )
-  )} />
-}
+  )
+  }
+  />
+)
 
 export default function Routes() {
   return (
