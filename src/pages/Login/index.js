@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Form } from './styles';
 import api from '../../services/api';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   state = {
@@ -29,7 +29,7 @@ export default class Login extends Component {
           <input type="password"
             placeholder="Informe sua senha"
             onChange={e => this.setState({ password: e.target.value })} />
-          <button type="submit">Salvar</button>
+          <Link to="/users">Salvar</Link>
         </Form>
       </Container>
     )
