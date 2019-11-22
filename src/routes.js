@@ -24,8 +24,8 @@ export default function Routes() {
       <Switch>
         <Route path='/' exact component={Login} />
         <PrivateRoute path="app" component={() => <h1>Você está logado</h1>} />
-        <Route path='/users' exact component={UsersList} />
-        <Route path='/user' exact component={User} />
+        <Route path='/users' component={UsersList} />
+        <Route path='/user/:id' component={User} />
       </Switch>
     </BrowserRouter>
   )

@@ -9,7 +9,6 @@ export default class UsersList extends Component {
 
   async componentDidMount() {
     const response = await api.get("/users?page=2");
-    console.log(response.data.data);
     this.setState({ users: response.data.data });
   }
 
@@ -23,7 +22,7 @@ export default class UsersList extends Component {
         <ul>
           {users.map(user => (
             <li key={user.id}>
-              <Link to={`/users/${user.id}`}>{user.first_name}</Link>
+              <Link to={`/user/${user.id}`}>{user.first_name}</Link>
               <span>{user.email}</span>
               <span>{user.avatar}</span>
             </li>
