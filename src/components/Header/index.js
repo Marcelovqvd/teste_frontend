@@ -3,7 +3,7 @@ import { Container } from './styles';
 export default function Header() {
   return (
     <Container>
-      <h1>Teste Front-end Tradeup</h1>
+      <h1>Teste Front-end</h1>
     </Container>
   )
 };
