@@ -1,20 +1,42 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
-import { Container, Title, Lista } from './styles';
+import { Container, Title, Lista, Page } from './styles';
 
 export default class UsersList extends Component {
   state = {
     users: [],
+    usersInfo: {},
+    page: 1,
   }
 
-  async componentDidMount() {
-    const response = await api.get("/users?page=2");
-    this.setState({ users: response.data.data });
+  componentDidMount() {
+    this.loadUsers();
   }
+
+  loadUsers = async (page = 1) => {
+    const response = await api.get(`/users?page=${page}`);
+    const { data, ...usersInfo } = response.data;
+    this.setState({ users: data, usersInfo, page });
+  }
+
+  prevPage = () => {
+    const { page, usersInfo } = this.state;
+    if (page === 1) return;
+    const pageNumber = page - 1;
+    this.loadUsers(pageNumber);
+  };
+
+  nextPage = () => {
+    const { page, usersInfo } = this.state;
+    if (page === usersInfo.total_pages) return;
+    const pageNumber = page + 1;
+    this.loadUsers(pageNumber);
+  };
+
 
   render() {
-    const { users } = this.state;
+    const { users, page, usersInfo } = this.state;
     return (
       <>
         <Title>Lista de usuários</Title>
@@ -30,7 +52,12 @@ export default class UsersList extends Component {
             ))}
           </Lista>
         </Container>
+        <Page>
+          <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
+          <button disabled={page === usersInfo.total_pages} onClick={this.nextPage}>Próxima</button>
+        </Page>
       </>
     )
-  }
+  };
 }
+

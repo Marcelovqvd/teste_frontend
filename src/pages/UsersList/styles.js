@@ -34,7 +34,7 @@ export const Lista = styled.ul`
     color: #fff;
     }
     a:hover {
-    color: red;
+      opacity: 0.7;
     }
     p {
     padding: 25px;
@@ -47,3 +47,26 @@ export const Lista = styled.ul`
     }
   }
 `;
+
+export const Page = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 0;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      opacity: 0.7;
+    }
+    button[disabled] {
+      opacity: 0.4;
+    }
+     `;
+
+
