@@ -22,9 +22,10 @@ export default class UsersList extends Component {
           <Lista>
             {users.map(user => (
               <li key={user.id}>
-                <Link to={`/user/${user.id}`}>{user.first_name}</Link>
+                <p>{user.first_name}</p>
                 <p>{user.email}</p>
                 <img src={user.avatar} alt={user.avatar}></img>
+                <Link to={`/user/${user.id}`}>Detalhes</Link>
               </li>
             ))}
           </Lista>

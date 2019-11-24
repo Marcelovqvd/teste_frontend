@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Container, Title, Lista } from './styles';
 
 export default class User extends Component {
   state = {
@@ -18,9 +19,20 @@ export default class User extends Component {
 
     return (
       <>
-        <p>{user.first_name}</p>
-        <p>{user.email}</p>
-        <p>{user.avatar}</p>
+        <Title>Detalhes do Usuário</Title>
+        <Container>
+          <Lista>
+            <li>
+              <p>{user.first_name}</p>
+            </li>
+            <li>
+              <p>{user.email}</p>
+            </li>
+            <li>
+              <img src={user.avatar} alt={user.avatar}></img>
+            </li>
+          </Lista>
+        </Container>
       </>
     )
 

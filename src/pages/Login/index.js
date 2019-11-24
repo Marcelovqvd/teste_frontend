@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Form } from './styles';
+import { Container, Form, Title } from './styles';
 import api from '../../services/api';
 
 export default class Login extends Component {
@@ -23,7 +23,7 @@ export default class Login extends Component {
     return (
 
       <Container>
-
+        <Title>Sejam bem-vindos à nossa página!</Title>
         <Form onSubmit={this.handleSubmit}>
 
           <label>Email</label>
