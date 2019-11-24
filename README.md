@@ -13,13 +13,13 @@ A aplicação consiste em três telas:
   - Listagem de Usuários cadastrados.
   - Ver os detalhes de um usuário específicos.
 
-### Tecnologias usadas e a razão das escolhas delas
+### Tecnologias utilizadas
 
-As tecnologias utilizadas para este desafio froam as seguintes:
+As tecnologias utilizadas para este desafio foram as seguintes:
 
 - ReactJs
-- react-router-dom - elaboração de rotas;
-- styled-components - estilização;
+- react-router-dom - Elaboração de rotas;
+- styled-components - Estilização;
 - Eslint, Prettier e EditorConfig - padronização da escrita de código;
-- axios - manter uma URL base para requisições à API;
-- yarn - gerenciador de pacotes. Utilizado por ser considerado mais rápido e seguro que o NPM.
+- axios - Manter uma URL base para requisições à API. Não precisa ficar escrevendo a URL por extenso para cada requisição.
+- yarn - Gerenciador de pacotes. Utilizado por ser considerado mais rápido e seguro que o NPM.

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
+import { Container, Title, Lista } from './styles';
 
 export default class UsersList extends Component {
   state = {
@@ -12,24 +13,23 @@ export default class UsersList extends Component {
     this.setState({ users: response.data.data });
   }
 
-
   render() {
     const { users } = this.state;
-
     return (
       <>
-        <h1>Lista</h1>
-        <ul>
-          {users.map(user => (
-            <li key={user.id}>
-              <Link to={`/user/${user.id}`}>{user.first_name}</Link>
-              <span>{user.email}</span>
-              <span>{user.avatar}</span>
-            </li>
-          ))}
-        </ul>
+        <Title>Lista de usuários</Title>
+        <Container>
+          <Lista>
+            {users.map(user => (
+              <li key={user.id}>
+                <Link to={`/user/${user.id}`}>{user.first_name}</Link>
+                <p>{user.email}</p>
+                <img src={user.avatar} alt={user.avatar}></img>
+              </li>
+            ))}
+          </Lista>
+        </Container>
       </>
     )
-
   }
 }
