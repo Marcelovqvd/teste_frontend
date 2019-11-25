@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 import { Container, Title, Lista } from './styles';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -31,6 +32,7 @@ export default class User extends Component {
             <li>
               <img src={user.avatar} alt={user.avatar}></img>
             </li>
+            <Link to={`/users/`}>Retorne à lista</Link>
           </Lista>
         </Container>
       </>

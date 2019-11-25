@@ -21,7 +21,7 @@ export default class UsersList extends Component {
   }
 
   prevPage = () => {
-    const { page, usersInfo } = this.state;
+    const { page } = this.state;
     if (page === 1) return;
     const pageNumber = page - 1;
     this.loadUsers(pageNumber);
