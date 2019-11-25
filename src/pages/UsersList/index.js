@@ -8,10 +8,18 @@ export default class UsersList extends Component {
     users: [],
     usersInfo: {},
     page: 1,
+    botões: []
   }
 
   componentDidMount() {
     this.loadUsers();
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { botões } = this.state;
+    if (prevState.users !== this.state.users) {
+      this.setState({ botões: [botões] });
+    }
   }
 
   loadUsers = async (page = 1) => {
@@ -36,7 +44,7 @@ export default class UsersList extends Component {
 
 
   render() {
-    const { users, page, usersInfo } = this.state;
+    const { users, page, usersInfo, botões } = this.state;
     return (
       <>
         <Title>Lista de usuários</Title>
@@ -53,8 +61,12 @@ export default class UsersList extends Component {
           </Lista>
         </Container>
         <Page>
-          <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
-          <button disabled={page === usersInfo.total_pages} onClick={this.nextPage}>Próxima</button>
+          {botões.map(botao => (
+            <>
+              <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
+              <button disabled={page === usersInfo.total_pages} onClick={this.nextPage}>Próxima</button>
+            </>
+          ))}
         </Page>
       </>
     )
