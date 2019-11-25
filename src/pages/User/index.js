@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Container, Title, Lista, Loading } from './styles';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class User extends Component {
   state = {
@@ -15,7 +17,7 @@ export default class User extends Component {
 
 
   render() {
-    const { user, loading } = this.state;
+    const { user } = this.state;
     return (
       <>
         <Title>Detalhes do Usuário</Title>

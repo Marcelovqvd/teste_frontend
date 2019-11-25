@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 export default class Login extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    loading: false
   }
 
   handleSubmit = async e => {
@@ -21,7 +22,9 @@ export default class Login extends Component {
         this.props.history.push('/users');
       }
     } catch (err) {
-      toast.error("opa, ocorreu algum erro");
+      toast.error("opa, ocorreu algum erro", {
+        position: toast.POSITION.TOP_CENTER
+      });
     }
 
   }
