@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-import { Container, Title, Lista } from './styles';
+import { Container, Title, Lista, Loading } from './styles';
 
 export default class User extends Component {
   state = {
@@ -15,8 +15,7 @@ export default class User extends Component {
 
 
   render() {
-    const { user } = this.state;
-
+    const { user, loading } = this.state;
     return (
       <>
         <Title>Detalhes do Usuário</Title>
@@ -34,7 +33,7 @@ export default class User extends Component {
           </Lista>
         </Container>
       </>
-    )
-
+    );
   }
 }
+

@@ -12,6 +12,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
+export const Loading = styled.div`
+  font-size: 46px;
+  color: #fff;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+`;
 
 export const Lista = styled.ul`
   list-style: none;
@@ -41,3 +49,5 @@ export const Lista = styled.ul`
     }
   }
 `;
+
+

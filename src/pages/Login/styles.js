@@ -6,6 +6,14 @@ export const Title = styled.h1`
   padding: 40px;
 `;
 
+export const ToastContainer = styled.p`
+  font-size: 26px;
+  color: #fff;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+`;
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
