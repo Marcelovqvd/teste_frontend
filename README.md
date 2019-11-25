@@ -22,7 +22,7 @@ As tecnologias utilizadas para este desafio foram as seguintes:
   A componentização é importante para organizar o código e isso é uma grande vantagem, pois é possível dividir partes do código em componentes que têm funcionalidades específicas. Assim, uma funcionalidade de um componente ou mesmo a lógica de um componente não vai interferir nas outras funcionalidades de outros componentes.
   Também, é possível manter dentro de um mesmo arquivo Javascript os códigos HTML (JSX - permite criar nossos próprios elementos), CSS e javascript, além das imagens utilizadas.
 
-Outra característica importante é a de que com React, as regras de negócio da aplicação ficam como responsabilidade do back-end. Desse modo, uma só API pode ser consumida por vários clientes diferentes (web e mobile).
+  Outra característica importante é a de que com React, as regras de negócio da aplicação ficam como responsabilidade do back-end. Desse modo, uma só API pode ser consumida por vários clientes diferentes (web e mobile).
 
 - react-router-dom - Permite o roteamento no front-end da aplicação;
 
