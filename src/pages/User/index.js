@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-import { Container, Title, Lista, Loading } from './styles';
-import { toast } from 'react-toastify';
+import { Container, Title, Lista } from './styles';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class User extends Component {
