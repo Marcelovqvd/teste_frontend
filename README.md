@@ -1,4 +1,4 @@
-# Teste Front-end Tradeup
+# Desafio Front-end
 
 ## Desafio
 
